@@ -16,8 +16,10 @@ function Movielist() {
   let genres = useRef();
   let artists = useRef();
   const showselectmovie = useRef();
+  const moviefilter1 = useRef();
   const [user , setuser] = useState("")
   const [mmname , setmmname] = useState("")
+  const [wsize , setwsize] = useState()
  
  let fn ;
   function click(e){
@@ -85,13 +87,33 @@ function Movielist() {
     artists.current.style.color = "black";
     
   }
+
+  function showfliter(){
+  if(moviefilter1.current.style.display === "block"){
+    moviefilter1.current.style.display = "none"
+    
+  }
+  else{
+    moviefilter1.current.style.display = "block"
+    
+  }
+
+  }
+
+  console.log(wsize)
+  
+  
+   
+ 
+  
+
   
   let id;
   return (
     <>
     {/* All Movie Poster and Movies Show on Home Page Code start Fron here */}
       <div className="btnfilter">
-        <button>Find Movie</button>
+        <button onClick={showfliter}>Find Movie</button>
       </div>
       <div className="movielistdiv">
         <div className="movielist" ref={showselectmovie}>
@@ -114,7 +136,7 @@ function Movielist() {
   
          {/*Movie Find Filter Code start from here */}
 
-      <div className="moviefilter">
+      <div className="moviefilter" ref={moviefilter1} >
           <p className="blue">FIND MOVIES BY</p>
         <form onSubmit={click}>
 

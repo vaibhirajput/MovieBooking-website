@@ -4,6 +4,7 @@ import "../detail/Detail.css"
 import Data from '../../common/moviedata/moviesData';
 import Artists from "../artistsData/Artists"
 import { Link, useParams } from 'react-router-dom';
+import Bookbtn from '../book/Bookbtn';
 
 function Detail() {
   let { id } = useParams();
@@ -14,7 +15,7 @@ function Detail() {
 
   return (
     <>
-      <Header />
+      <Header  book={<Bookbtn/>}/>
 
       <div id='detail-mainediv'>
         <div className="movieposter">
